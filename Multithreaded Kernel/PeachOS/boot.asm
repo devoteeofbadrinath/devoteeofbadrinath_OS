@@ -2,7 +2,7 @@ ORG 0x7c00
 BITS 16
 
 start:
-    mov ah, 0eh
+    mov si, message
     call print
     jmp $
 
