@@ -1,6 +1,8 @@
 ORG 0
 BITS 16
 
+jmp 0x7c0:start
+
 start:
     cli ; Clear interrupts
     mov ax, 0x7c0
@@ -28,7 +30,7 @@ print:
 
 print_char:
     mov ah, 0eh
-    int ox10
+    int 0x10
     ret
 
 message: db 'Hello World!', 0
