@@ -6,9 +6,8 @@ start:
     mov al, 'A'
     mov bx, 0
     int 0x10
-
+    
     jmp $
 
-times 12-($ - $$) db "Hello", 0
-
+times 510-($ - $$) db 0
 dw 0xAA55
