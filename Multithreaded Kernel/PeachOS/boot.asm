@@ -9,6 +9,6 @@ start:
 
     jmp $
 
-times 13-($ - $$) db 15
+times 12-($ - $$) db "Hello", 0
 
 dw 0xAA55
