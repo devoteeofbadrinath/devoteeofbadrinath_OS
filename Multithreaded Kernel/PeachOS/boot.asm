@@ -6,7 +6,6 @@ start:
     call print
     jmp $
 
-
 print:
     mov bx, 0
 .loop:
