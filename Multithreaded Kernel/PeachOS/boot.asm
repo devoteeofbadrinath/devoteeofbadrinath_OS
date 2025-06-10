@@ -12,7 +12,7 @@ start:
 handle_zero:
     mov ah, 0eh
     mov al, 'A'
-    mob bx, 0x00
+    mov bx, 0x00
     int 0x10
     iret
 
@@ -31,7 +31,7 @@ step2:
     mov word[ss:0x02], 0x7c0
 
     int 0
-    
+
     mov si, message
     call print
     jmp $
