@@ -27,6 +27,7 @@ AH = status (see #00234)
 AL = number of sectors transferred (only valid if CF set for some
 BIOSes)
 
+
 step2:
     cli ; Clear Interrupts
     mov ax, 0x7c0
@@ -37,7 +38,18 @@ step2:
     mov sp, 0x7c00
     sti ; Enable Interrupts
 
- 
+    mov ah, 2 ; READ SECTOR COMMAND
+    mov al, 1 ; ONE SECTOR TO READ
+    mov ch, 0 ; Cylinder low eight bits
+    mov cl, 2 ; Read sector two
+    mov dh, 0 ; Head number
+    mov bx, buffer
+    int 0x13
+    
+
+error:
+    mov si, error_message
+    call print
     jmp $
 
 print:
@@ -56,5 +68,10 @@ print_char:
     int 0x10
     ret
 
+
+error_message: db 'Failed to load sector', 0
+
 times 510-($ - $$) db 0
 dw 0xAA55
+
+buffer:
