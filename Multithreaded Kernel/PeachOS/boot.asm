@@ -27,6 +27,9 @@ step2:
     mov bx, buffer
     int 0x13
     jc error
+
+    mov si, buffer
+    call print
     jmp $
 
 error:
