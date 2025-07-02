@@ -5,10 +5,10 @@ start:
     cli; Clear interrupts
     mov ax, 0x7c0
     mov ds, ax
-    mov es, ax
-    mov ax, 0x00
-    mov ss, ax
-    mov sp, 0x7c00
+    ;mov es, ax
+    ;mov ax, 0x00
+    ;mov ss, ax
+    ;mov sp, 0x7c00
     sti; Enables interrupts
     mov si, message
     call print
