@@ -1,5 +1,5 @@
 ORG 0x6c00
-BITS 16
+BITS 32
 
 start:
     mov ah, 0eh
