@@ -1,4 +1,4 @@
-ORG 0x7c01
+ORG 0
 BITS 16
 
 start: 
